@@ -265,7 +265,7 @@ export const chatWithBot = async (req: Request, res: Response) => {
 
           finalResult = searchResult.messages.slice(-1)[0].content.toString();
 
-          res.write("data: [DONE]\n\n");
+          res.write("data: [DONE]\u001D");
           break;
 
         case "execute":
@@ -306,7 +306,7 @@ export const chatWithBot = async (req: Request, res: Response) => {
 
           finalResult = llmResult.messages.slice(-1)[0].content.toString();
 
-          res.write("data: [DONE]\n\n");
+          res.write("data: [DONE]\u001D");
           break;
       }
     } catch (agentError) {

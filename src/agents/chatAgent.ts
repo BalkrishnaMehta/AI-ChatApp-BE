@@ -1,6 +1,7 @@
 import { MemorySaver } from "@langchain/langgraph";
 import { createReactAgent } from "@langchain/langgraph/prebuilt";
 import { ChatOllama } from "@langchain/ollama";
+import chatAssistantTemplate from "../prompts/chatAssistant.js";
 
 const agentCheckpointer = new MemorySaver();
 const agent = new ChatOllama({
@@ -13,6 +14,7 @@ const llmAgent = createReactAgent({
   llm: agent,
   tools: [],
   checkpointSaver: agentCheckpointer,
+  prompt: chatAssistantTemplate,
 });
 
 export default llmAgent;
